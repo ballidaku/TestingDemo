@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+              android:layout_width = "match_parent"
+              android:layout_height = "match_parent"
+              android:background = "@android:color/black"
+              android:orientation = "vertical"
+>
+
+    <!--  com.android.grafika.AspectFrameLayout
+        android:id="@+id/cameraPreview_afl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/toggleRecording_button"
+        android:layout_centerInParent="true" >
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/cameraPreview_surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </com.android.grafika.AspectFrameLayout> -->
+    <!--
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width = "match_parent"
+                     android:layout_height = "wrap_content">-->
+
+    <com.chris.video.SquareCameraPreview
+        android:id = "@+id/camera_preview_view"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+    />
+    <!--    </FrameLayout>-->
+
+    <!--<View-->
+    <!--android:id = "@+id/cover_top_view"-->
+    <!--android:layout_width = "match_parent"-->
+    <!--android:layout_height = "0dp"-->
+    <!--android:layout_alignBottom = "@id/camera_preview_view"-->
+    <!--android:background = "@android:color/black"/>-->
+
+    <View
+        android:id = "@+id/cover_bottom_view"
+        android:layout_width = "match_parent"
+        android:layout_height = "0dp"
+        android:background = "@android:color/black"/>
+
+
+    <!--    <Spinner
+            android:id = "@+id/cameraFilter_spinner"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_alignParentRight = "true"
+            android:background = "@android:color/white"/>-->
+
+    <!-- these overlap with the SurfaceView; by default, it's underneath the UI layer -->
+
+    <!--    <TextView
+            android:id = "@+id/cameraParams_text"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "[?]"
+            android:textAppearance = "?android:attr/textAppearanceMedium"/>-->
+
+    <!--   <TextView
+           android:id = "@+id/cameraOutputFileLabel"
+           android:layout_width = "wrap_content"
+           android:layout_height = "wrap_content"
+           android:text = "Output File :"/>-->
+
+    <!--   <TextView
+           android:id = "@+id/cameraOutputFile_text"
+           android:layout_width = "wrap_content"
+           android:layout_height = "wrap_content"
+           android:paddingLeft = "4dp"
+           android:text = "[filename]"/>-->
+    <com.example.sharan.testing.ProgressView
+        android:id = "@+id/recorder_progress"
+        android:layout_width = "match_parent"
+        android:layout_height = "6dp"/>
+
+    <LinearLayout
+        android:id = "@+id/camera_tools_view"
+        android:layout_width = "match_parent"
+        android:layout_height = "0dp"
+        android:layout_weight = "1"
+        android:gravity = "center"
+        android:orientation = "horizontal"
+        android:padding = "10dp">
+
+
+        <Button
+            android:id = "@+id/togPause_button"
+            style = "?android:attr/buttonStyleSmall"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:onClick = "clickTogglePause"
+            android:text = "Pause"/>
+
+
+        <Button
+            android:id = "@+id/press"
+            style = "?android:attr/buttonStyleSmall"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:text = "Press"/>
+
+
+        <ImageView
+            android:id = "@+id/capture_image_button"
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:src = "@drawable/photo_btn_selector"/>
+
+
+    </LinearLayout>
+</LinearLayout>
